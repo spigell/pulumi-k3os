@@ -1,10 +1,10 @@
 {
-    "name": "xyz-typescript",
-    "version": "0.1.0",
+    "name": "simple",
     "devDependencies": {
-        "@types/node": "latest"
+        "@types/node": "^10.0.0"
     },
     "dependencies": {
-        "@pulumi/pulumi": "latest"
+        "@pulumi/pulumi": "^3.0.0",
+        "@spigell/pulumi-k3os": "^0.0.1"
     }
 }

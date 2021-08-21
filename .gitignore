@@ -1,4 +1,14 @@
-/vendor/
 **/node_modules/
 Pulumi.*.yaml
+/vendor/
+**/bin/
+**/obj/
+**/node_modules/
+**/.vs
+**/.idea
+**/.ionide
+.pulumi
+Pulumi.*.yaml
 yarn.lock
+ci-scripts
+/nuget/

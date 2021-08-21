@@ -1,41 +1,15 @@
 # K3OS Pulumi Provider
 
-This is a very simple pulumi native provider for K3OS. 
+This is a very rough pulumi native provider for K3OS. 
 
 Resources:
-* Node: It manages file located in `/var/lib/rancher/k3os/config.yaml`, i.e. if the resource craated then config will be created also (and vise-versa). 
+* Node: It manages file located in `/var/lib/rancher/k3os/config.yaml`, i.e. if the resource craated then config will be created also. 
 *note: your server will be rebooted!"* A typescript example of using the single resource defined in `examples/simple`. *note: required Vagrant*
 
-``Read`` call is not implemented so commands like `pulumi refresh` or `pulumi import` are not working right now.
+Read call is not implemented so commands like `pulumi refresh` or `pulumi import` are not working right now.
 
-## Installing
 
-This package is available only for JS/TS or Golang.
-
-### Node.js (JavaScript/TypeScript)
-
-To use from JavaScript or TypeScript in Node.js, install using either `npm`:
-
-    $ npm install @spigell/pulumi-k3os
-
-or `yarn`:
-
-    $ yarn add @spigell/pulumi-k3os
-
-### Go
-
-To use from Go, use `go get` to grab the latest version of the library
-
-    $ go get github.com/spigell/pulumi-k3os/sdk
-
-## Building
-
-### Dependencies
-
-- Go 1.15
-- NodeJS 10.X.X or later
-
-### Local Build and Test
+## Local Build and Test
 
 Most of the code for the provider implementation is in `provider/pkg` directory.  
 

@@ -1,0 +1,172 @@
+{
+    "name": "k3os",
+    "version": "0.0.1",
+    "keywords": [
+        "pulumi",
+        "k3os"
+    ],
+    "pluginDownloadURL": "https://github.com/spigell/pulumi-k3os/releases/download/v0.0.1",
+    "config": {
+        "variables": {
+            "renderYamlToDirectory": {
+                "type": "string",
+                "description": "directory to render Yaml config"
+            }
+        }
+    },
+    "types": {
+        "k3os:index:connection": {
+            "type": "object",
+            "properties": {
+                "addr": {
+                    "type": "string"
+                },
+                "user": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                }
+            }
+        },
+        "k3os:index:k3OS": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string"
+                },
+                "serverUrl": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "environment": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "k3sArgs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "labels": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "taints": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "k3os:index:CloudInitFiles": {
+            "type": "object",
+            "properties": {
+                "encoding": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "rawFilePermissions": {
+                    "type": "string"
+                },
+                "owner": {
+                    "type": "string"
+                }
+            }
+        },
+        "k3os:index:nodeConfiguration": {
+            "type": "object",
+            "properties": {
+                "hostname": {
+                    "type": "string"
+                },
+                "sshAuthorizerKeys": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "bootCmd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "initCmd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "runCmd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "datasources": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "modules": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "sysctls": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "k3OS": {
+                    "$ref": "#/types/k3os:index:k3OS"
+                },
+                "writeFiles": {
+                    "$ref": "#/types/k3os:index:CloudInitFiles"
+                }
+            }
+        }
+    },
+    "resources": {
+        "k3os:index:Node": {
+            "inputProperties": {
+                "connection": {
+                    "$ref": "#/types/k3os:index:connection"
+                },
+                "nodeConfiguration": {
+                    "$ref": "#/types/k3os:index:nodeConfiguration"
+                }
+            },
+            "requiredInputs": [
+                "connection",
+                "nodeConfiguration"
+            ]
+        }
+    },
+    "language": {
+        "nodejs": {
+            "packageName": "@spigell/pulumi-k3os",
+            "devDependencies": {
+                "typescript": "^3.7.0"
+            }
+        },
+        "python": {}
+    }
+}

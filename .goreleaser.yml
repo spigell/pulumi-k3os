@@ -1,0 +1,28 @@
+archives:
+  - id: archive
+    name_template: '{{ .Binary }}-{{ .Tag }}-{{ .Os }}-{{ .Arch }}'
+before:
+  hooks:
+    - make provider_codegen
+builds:
+  - binary: pulumi-resource-k3os
+    dir: provider
+    env:
+      - CGO_ENABLED=0
+      - GO111MODULE=on
+    goarch:
+      - amd64
+      - arm64
+    goos:
+      - darwin
+      - windows
+      - linux
+    ldflags:
+      - -X github.com/pulumi/pulumi-k3os/provider/pkg/version.Version={{.Tag}}
+    main: ./cmd/pulumi-resource-k3os/
+changelog:
+  skip: true
+release:
+  disable: false
+snapshot:
+  name_template: '{{ .Tag }}-SNAPSHOT'

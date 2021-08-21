@@ -1,0 +1,36 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+#
+# You should set up dhcp server on vboxnet0 network!
+
+def configure_vb(node)
+  node.vm.provider 'virtualbox' do |vb|
+    vb.customize ['modifyvm', :id, '--nic2', 'hostonly']
+    vb.customize ['modifyvm', :id, '--hostonlyadapter2', 'vboxnet0']
+
+    vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'off']
+    vb.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
+
+    vb.customize ['modifyvm', :id, '--acpi', 'off']
+    vb.memory = '2048'
+    vb.cpus = 2
+  end
+end
+
+Vagrant.configure('2') do |config|
+  config.vm.box = 'spigell/k3os'
+  config.vm.guest = :linux
+
+  config.ssh.forward_agent = true
+  config.vm.network 'forwarded_port', guest: 22, host: 2222, disabled: true
+  config.vm.synced_folder '.', '/vagrant', disabled: true
+
+  config.vm.define 'k3os-server01' do |server01|
+    configure_vb(server01)
+  end
+
+  config.vm.define 'k3os-agent01' do |agent01|
+    configure_vb(agent01)
+  end
+
+end

@@ -1,0 +1,1042 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ot",
+				"otherOutput"
+			],
+			[
+				"kub",
+				"kubeApiAddr"
+			],
+			[
+				"kube",
+				"kubeApiAddr"
+			],
+			[
+				"Ex",
+				"ExternalIP"
+			],
+			[
+				"In",
+				"InternalDomain"
+			],
+			[
+				"in",
+				"infraServices"
+			],
+			[
+				"St",
+				"StringArray"
+			],
+			[
+				"met",
+				"metallb"
+			],
+			[
+				"ng",
+				"nginxGlobalConfigurationsv1"
+			],
+			[
+				"S",
+				"Sprintf"
+			],
+			[
+				"Pr",
+				"PrivateKey"
+			],
+			[
+				"Me",
+				"MetalLbInfra"
+			],
+			[
+				"addre",
+				"addresses"
+			],
+			[
+				"pee",
+				"peersWithoutSelf"
+			],
+			[
+				"En",
+				"Endpoint"
+			],
+			[
+				"Ran",
+				"RancherK3OS"
+			],
+			[
+				"Pri",
+				"PrivateKey"
+			],
+			[
+				"pri",
+				"privateKey"
+			],
+			[
+				"peer",
+				"Peers"
+			],
+			[
+				"Kee",
+				"PersistentKeepalive"
+			],
+			[
+				"Priv",
+				"PrivateAddr"
+			],
+			[
+				"all",
+				"AllowedIps"
+			],
+			[
+				"str",
+				"struct"
+			],
+			[
+				"All",
+				"AllowedIps"
+			],
+			[
+				"st",
+				"struct"
+			],
+			[
+				"Pub",
+				"PublicKey"
+			],
+			[
+				"Pu",
+				"PublicAddr"
+			],
+			[
+				"Ref",
+				"ReflectFrom"
+			],
+			[
+				"inf",
+				"infraunlimited_chartmuseum_listen_ip"
+			],
+			[
+				"clie",
+				"client_cert"
+			],
+			[
+				"etcd",
+				"etcdctl"
+			],
+			[
+				"certi",
+				"certificate_bundle"
+			],
+			[
+				"infa",
+				"infraunlimited_etcd_vault"
+			],
+			[
+				"infra",
+				"infraunlimited_etcd_vault"
+			],
+			[
+				"vault_ser",
+				"vault_secret_name"
+			],
+			[
+				"cre",
+				"creds_file"
+			],
+			[
+				"gitla",
+				"gitlab_broken_runners"
+			],
+			[
+				"git",
+				"gitlab_broken_runners"
+			],
+			[
+				"vault_se",
+				"vault_secret_name"
+			],
+			[
+				"infra_",
+				"infra_gitlab_registry_enabled"
+			],
+			[
+				"infra_git",
+				"infra_gitlab_nginx_enable"
+			],
+			[
+				"vault_",
+				"vault_needed_ca"
+			],
+			[
+				"backe",
+				"backends"
+			],
+			[
+				"open",
+				"openvpn_instance"
+			],
+			[
+				"op",
+				"openvpn_instance"
+			],
+			[
+				"confi",
+				"configuration"
+			],
+			[
+				"uplo",
+				"uploaded_configs"
+			],
+			[
+				"se",
+				"secret_name"
+			],
+			[
+				"comm",
+				"common_secrets"
+			],
+			[
+				"ope",
+				"openvpn_servers"
+			],
+			[
+				"loo",
+				"loop_var"
+			],
+			[
+				"vault",
+				"vault_openvpn"
+			],
+			[
+				"allow_",
+				"allow_subdomains"
+			],
+			[
+				"h",
+				"hashivault_secret_engine"
+			],
+			[
+				"valu",
+				"vault_status"
+			],
+			[
+				"re",
+				"replaced_info"
+			],
+			[
+				"value",
+				"value_raw"
+			],
+			[
+				"de",
+				"description"
+			],
+			[
+				"ou",
+				"output_yaml"
+			],
+			[
+				"u",
+				"utf-8"
+			],
+			[
+				"enco",
+				"encode"
+			],
+			[
+				"groups",
+				"needed_groups"
+			],
+			[
+				"pa",
+				"packages_by_environment"
+			],
+			[
+				"pac",
+				"packages_by_user"
+			],
+			[
+				"rt-",
+				"rt-testing-env"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 396.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				":",
+				":$ - EOF"
+			],
+			[
+				":node",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"gitlab",
+				"Gitlab issue: Open"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pak",
+				"Package Control: Install Package"
+			],
+			[
+				":W",
+				":w - Save"
+			],
+			[
+				":yam",
+				"Set Syntax: YAML"
+			],
+			[
+				":q",
+				"Set Syntax: SQL"
+			],
+			[
+				":yaml",
+				"Set Syntax: YAML"
+			],
+			[
+				"she",
+				"ShellCommand"
+			],
+			[
+				"shell",
+				"ShellCommand"
+			],
+			[
+				"Paca",
+				"Package Control: Install Package"
+			],
+			[
+				":per",
+				"Set Syntax: Perl"
+			],
+			[
+				":bas",
+				"Set Syntax: Bourne Again Shell (bash)"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"git add all",
+				"Git: Add All"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git commit ",
+				"Git: Commit"
+			],
+			[
+				"git st",
+				"Git: Status"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"Git add all",
+				"Git: Add All"
+			],
+			[
+				"set syntax perl",
+				"Set Syntax: Perl"
+			],
+			[
+				"git blame",
+				"Git: Blame"
+			],
+			[
+				":json",
+				"Set Syntax: JSON"
+			],
+			[
+				":jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"git add",
+				"Git: Add All"
+			],
+			[
+				"Git comm",
+				"Git: Commit"
+			],
+			[
+				"Git com",
+				"Git: Commit"
+			],
+			[
+				"Git add",
+				"Git: Add All"
+			],
+			[
+				"Git",
+				"Git: Status"
+			],
+			[
+				"Git commit ",
+				"Git: Commit"
+			],
+			[
+				":ruby",
+				"Set Syntax: Ruby"
+			],
+			[
+				":Git ",
+				"Set Syntax: Git Commit View"
+			],
+			[
+				":pacakge",
+				"Package Control: List Packages"
+			],
+			[
+				":git",
+				"Set Syntax: Git Blame"
+			],
+			[
+				":packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 470.0
+	},
+	"console":
+	{
+		"height": 150.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/spigell/projects/infra/infraUnlimited/pulumi/pulumi-k3os-node"
+	],
+	"file_history":
+	[
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/04-k8s-cluster/addons/kilo.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/04-k8s-cluster/main.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/04-k8s-cluster/addons/init.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/04-k8s-cluster/addons/metallb.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/04-k8s-cluster/spec/init.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/04-k8s-cluster/addons/metric_server.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/05-cluster-resources/main.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/04-k8s-cluster/addons/nginx_ingress.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/04-k8s-cluster/Pulumi.local.yaml",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/05-cluster-resources/go.mod",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/05-cluster-resources/services/consul.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/04-k8s-cluster/rbac/init.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/05-cluster-resources/services/init.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/04-k8s-cluster/namespaces/init.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/05-cluster-resources/namespaces/namespaces.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/05-cluster-resources/services/metric_server.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/05-cluster-resources/services/metallb.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/03-k8s-cluster/main.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/os-layer/k3os_k3s_wireguard/Pulumi.local.yaml",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/k8s-cluster/main.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/k8s-cluster/addons/kilo.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/k8s-cluster/addons/nginx_ingress.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/pulumi-crosswalk/04-k8s-cluster/Pulumi.yaml",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/03-k8s-cluster/addons/init.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/03-k8s-cluster/addons/kilo.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/03-k8s-cluster/generate-crds.sh",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/Pulumi.local.yaml",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/03-k8s-cluster/addons/nginx_ingress.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/03-k8s-cluster/addons/metallb.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/services/nginx_ingress.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/services/vault.go_m",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/03-k8s-cluster/Pulumi.local.yaml",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/Pulumi.local.yaml",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/main.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/services/metallb.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/services/kilo.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/services/metric_server.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/services/consul.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/services/init.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/crds/sources/squat/kilo/crds.yaml",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/types.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/config.go_m",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/services/lb.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/services/params.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/Vagrantfile",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/helm/metric_server.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/apps/metric_server.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/apps/options.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/apps/consul.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/apps/vault.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/services/nginx.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/utils/wireguard/config_test.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/utils/wireguard/config.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/main.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/services/options.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/services/vault.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k8s-layer/04-cluster-resources/namespace.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/vagrant/get_ip_addresses.sh",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/Pulumi.vagrant.yaml",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/Pulumi.dev.yaml",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/go.mod",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/vagrant/server02.yml",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/vagrant/k3s-server01-new.yml",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/vagrant/k3s-agent01.yml",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/wg_peers.go",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/vagrant/agent01.yml",
+		"/home/spigell/projects/infra/infraUnlimited/infra-proposals/k3os_k3s_wireguard/vagrant/server01.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/group_vars/all/gitlab.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/common/tasks/main.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/group_vars/ci/gitlab/projects.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/group_vars/ci/gitlab/groups.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/infraunlimited.vault/tasks/pki.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/kube/kubespray/roles/download/tasks/prep_kubeadm_images.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/group_vars/all/chartmuseum.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/vars/nginx/servers/chartmuseum.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/hosts",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/Vagrantfile",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/.gitignore",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/infratech.nginx/tasks/main.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/group_vars/all/nginx.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/infratech.nginx/templates/htpasswd.tmpl",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/infratech.nginx/defaults/main.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/vars/nginx/servers/mgmt.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/requirements.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/kube01/Vagrantfile",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/group_vars/all/vault.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/group_vars/mgmt/nginx/mgmt.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/group_vars/chartmuseum/nginx/servers.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/group_vars/all/vault.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/group_vars/etcd/main.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/etcd.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/kube01/group_vars/k8s-cluster/k8s-cluster.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/kube01/group_vars/k8s-cluster/addons.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/kube01/group_vars/k8s-cluster/etcd.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/infratech.vault/vars/brianshumate.vault.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/group_vars/all/openvpn.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/group_vars/all/proxies.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/action_plugins/hashivault.py",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/group_vars/mgmt/nginx/servers.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/infratech.gitlab/tasks/server_deploy_cert.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/infratech.vault/tasks/issue_cert.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/kube.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/infratech.openvpn/tasks/find_client_in_configuration.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/service-discovery/defaults/main.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/kubespray-additions/README.md",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/kubespray-additions/tasks/kube-operator.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/infratech.gitlab/templates/infra_gitlab.rb.j2",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/infratech.gitlab/defaults/main.yml",
+		"/home/spigell/projects/infra/infraUnlimited/kube/addon-operator/modules/004-kube-dash/values.yaml",
+		"/home/spigell/projects/infra/infraUnlimited/kube/addon-operator/modules/002-nginx-ingress/values.yaml",
+		"/home/spigell/projects/infra/infraUnlimited/kube/addon-operator/modules/003-deps-helm/values.yaml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/group_vars/all/monitoring.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/group_vars/all/etcd.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/README.md",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/group_vars/all/coredns.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/kube/Vagrantfile",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/group_vars/coredns/main.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/kube/group_vars/all/all.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/kube/group_vars/k8s-cluster/etcd.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/kube/group_vars/k8s-cluster/k8s-cluster.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/inventories/production/kube/group_vars/k8s-cluster/addons.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/kube/kubespray/inventory/sample/group_vars/k8s-cluster/k8s-cluster.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/kube/kubespray/inventory/sample/group_vars/etcd.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/kube/kubespray/roles/kubernetes/kubeadm/templates/kubeadm-client.conf.v1alpha1.j2",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/etcd/tasks/main.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/monitoring.yml",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/action_plugins/etcd3.py",
+		"/home/spigell/projects/infra/infraUnlimited/ansible/roles/monitoring/tasks/node_exporter.yml"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 39.0
+	},
+	"input":
+	{
+		"height": 39.964035964
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "pulumi-k3os-node.sublime-project",
+	"replace":
+	{
+		"height": 70.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"vag",
+				"os-layer/k3os_k3s_wireguard/Vagrantfile"
+			],
+			[
+				"kilo",
+				"k8s-layer/03-k8s-cluster/addons/kilo.go"
+			],
+			[
+				"main",
+				"k8s-layer/03-k8s-cluster/main.go"
+			],
+			[
+				"ngi",
+				"k8s-layer/03-k8s-cluster/addons/nginx_ingress.go"
+			],
+			[
+				"ing",
+				"k8s-layer/04-cluster-resources/services/nginx_ingress.go"
+			],
+			[
+				"ngin",
+				"k8s-layer/04-cluster-resources/services/nginx_ingress.go"
+			],
+			[
+				"Va",
+				"k3os_k3s_wireguard/Vagrantfile"
+			],
+			[
+				"proj",
+				"inventories/production/group_vars/ci/gitlab/projects.yml"
+			],
+			[
+				"gitlab",
+				"group_vars/all/gitlab.yml"
+			],
+			[
+				"grou",
+				"inventories/production/group_vars/ci/gitlab/groups.yml"
+			],
+			[
+				"projects.",
+				"inventories/production/group_vars/ci/gitlab/projects.yml"
+			],
+			[
+				"pki",
+				"roles/infraunlimited.vault/tasks/pki.yml"
+			],
+			[
+				"proje",
+				"inventories/production/group_vars/ci/gitlab/projects.yml"
+			],
+			[
+				"vars/",
+				"vars/nginx/servers/chartmuseum.yml"
+			],
+			[
+				"req",
+				"requirements.yml"
+			],
+			[
+				"requ",
+				"requirements.yml"
+			],
+			[
+				"host",
+				"inventories/production/hosts"
+			],
+			[
+				"etcd",
+				"etcd.yml"
+			],
+			[
+				"op",
+				"group_vars/all/openvpn.yml"
+			],
+			[
+				"V",
+				"inventories/production/Vagrantfile"
+			],
+			[
+				"group",
+				"inventories/production/group_vars/ci/gitlab/groups.yml"
+			],
+			[
+				"pro",
+				"inventories/production/group_vars/ci/gitlab/projects.yml"
+			],
+			[
+				"service-di/",
+				"roles/service-discovery/defaults/main.yml"
+			],
+			[
+				"moni",
+				"inventories/production/group_vars/all/monitoring.yml"
+			],
+			[
+				"REa",
+				"README.md"
+			],
+			[
+				"Rea",
+				"README.md"
+			],
+			[
+				"ope",
+				"group_vars/all/openvpn.yml"
+			],
+			[
+				"etcd/main",
+				"roles/etcd/tasks/main.yml"
+			],
+			[
+				"etcd/des",
+				"roles/etcd/molecule/default/destroy.yml"
+			],
+			[
+				"etcd/mole",
+				"roles/etcd/molecule/default/molecule.yml"
+			],
+			[
+				"etcd/molle",
+				"roles/etcd/molecule/default/molecule.yml"
+			],
+			[
+				"manage_ce",
+				"roles/infratech.nginx/tasks/manage_certs.yml"
+			],
+			[
+				"mgmt",
+				"mgmt.yml"
+			],
+			[
+				"Vag",
+				"inventories/production/Vagrantfile"
+			],
+			[
+				"amtgbo.t",
+				"roles/monitoring/files/amtgbot/amtgbot.template"
+			],
+			[
+				"mon",
+				"group_vars/all/monitoring.yml"
+			],
+			[
+				"va",
+				"inventories/production/Vagrantfile"
+			],
+			[
+				"open",
+				"group_vars/all/openvpn.yml"
+			],
+			[
+				"gitlab.rb",
+				"roles/infratech.gitlab/templates/infra_gitlab.rb.j2"
+			],
+			[
+				"Vagr",
+				"inventories/production/Vagrantfile"
+			],
+			[
+				"RE",
+				"README.md"
+			],
+			[
+				"manage_us",
+				"roles/infratech.gitlab/tasks/manage_users.yml"
+			],
+			[
+				"vault/check_",
+				"roles/infratech.vault/tasks/check_ca.yml"
+			],
+			[
+				"confi",
+				"roles/infratech.gitlab/tasks/configure.yml"
+			],
+			[
+				"mana",
+				"roles/infratech.nginx/tasks/manage_certs.yml"
+			],
+			[
+				"gitl/req",
+				"roles/infratech.gitlab/requirements.yml"
+			],
+			[
+				"vagr",
+				"inventories/production/Vagrantfile"
+			],
+			[
+				"clie",
+				"roles/openvpn/templates/client.conf"
+			],
+			[
+				"nginx/mana",
+				"roles/nginx/tasks/manage_certs.yml"
+			],
+			[
+				"vars",
+				"misc/vault/pki/vars.yml"
+			],
+			[
+				"server.y",
+				"roles/openvpn/tasks/server.yml"
+			],
+			[
+				"install.",
+				"roles/openvpn/tasks/install.yml"
+			],
+			[
+				"un",
+				"misc/vault/unseal.yml"
+			],
+			[
+				"boo",
+				"misc/vault/bootstrap.yml"
+			],
+			[
+				"ser",
+				"servers-infra.yml"
+			],
+			[
+				"rep",
+				"group_vars/masterhosts/repos_by_users.yml"
+			],
+			[
+				"wor",
+				"workstations_work.yml"
+			],
+			[
+				"gogs",
+				"roles/gogs/templates/gogs-default.yml.j2"
+			],
+			[
+				"gogs-ba",
+				"roles/gogs/templates/gogs-backup-default.service.j2"
+			],
+			[
+				"dant",
+				"roles/dante/templates/dante-default.yml.j2"
+			],
+			[
+				"shado",
+				"roles/shadowsocks/templates/shadowsocks-default.service.j2"
+			],
+			[
+				"sha",
+				"roles/shadowsocks/templates/shadowsocks-default.yml.j2"
+			],
+			[
+				"in",
+				"servers-infra.yml"
+			],
+			[
+				"repo",
+				"group_vars/masterhosts/repos_by_users.yml"
+			],
+			[
+				"restream-v",
+				"roles/restream-VMs/tasks/main.yml"
+			],
+			[
+				"master",
+				"masterhosts.yml"
+			],
+			[
+				"config",
+				"group_vars/masterhosts/configs_by_users.yml"
+			],
+			[
+				"add_var_log",
+				"roles/duty_helper/templates/scenarios/add_var_log/sparrowfile.j2"
+			],
+			[
+				"nginx_c",
+				"roles/duty_zabbix_tg_notifier/templates/scenarios/check_nginx_caches/sparrowfile.j2"
+			],
+			[
+				"nginx_",
+				"roles/duty_zabbix_tg_notifier/templates/scenarios/check_nginx_caches/sparrowfile.j2"
+			],
+			[
+				"app_",
+				"roles/gogs/templates/app_tomato.ini.j2"
+			],
+			[
+				"hosts",
+				"hosts"
+			],
+			[
+				"backu",
+				"roles/gogs/tasks/backup.yml"
+			],
+			[
+				"zabbix_ho",
+				"roles/zabbix_hosts_importer/tasks/main.yml"
+			],
+			[
+				"hosts_mak",
+				"roles/hosts_maker/tasks/main.yml"
+			],
+			[
+				"add_var",
+				"roles/duty_helper/templates/scenarios/add_var_log/sparrowfile.j2"
+			],
+			[
+				"hos",
+				"roles/hosts_maker/templates/hosts_maker.json.j2"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 508.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/projects/learning/pulumi/pulumi.sublime-project"
+			],
+			[
+				"glu",
+				"~/projects/infra/infraUnlimited/ansible-roles/ansible-role-gopher-lua-libs/ansible-role-gopher-lua-libs.sublime-project"
+			],
+			[
+				"host",
+				"~/projects/infra/infraUnlimited/ansible-roles/ansible-role-hosts/ansible-role-hosts.sublime-project"
+			],
+			[
+				"bot",
+				"~/projects/pokerchained-bot/lua_pockerchained_bot.sublime-project"
+			],
+			[
+				"coff",
+				"~/coffeenet/ansible/.coffenet.sublime-project"
+			],
+			[
+				"co",
+				"~/coffeenet/ansible/.coffenet.sublime-project"
+			]
+		],
+		"width": 386.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 343.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,8 +1,11 @@
 {
-    "name": "@pulumi/xyz",
+    "name": "@spigell/pulumi-k3os",
     "version": "${VERSION}",
     "scripts": {
         "build": "tsc"
+    },
+    "devDependencies": {
+        "typescript": "^3.7.0"
     },
     "peerDependencies": {
         "@pulumi/pulumi": "latest"

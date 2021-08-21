@@ -1,0 +1,1 @@
+{"dependencies":[["method_source",["~> 1.0"]],["coderay",["~> 1.1"]],["pry",["= 0.14.1"]],["vagrant-host-shell",["= 0.0.4"]],["ffi",[">= 1.0.0"]],["win32-process",[">= 0"]],["vagrant-sshfs",["= 1.3.6"]]],"checksum":"45bc239677d7c67f9bf278d65e49213844a9a5ac827c2f778eeab0767e7cc402","vagrant_version":"2.2.16"}
