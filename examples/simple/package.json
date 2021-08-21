@@ -5,6 +5,6 @@
     },
     "dependencies": {
         "@pulumi/pulumi": "^3.0.0",
-        "@spigell/pulumi-k3os": "file:../../sdk/nodejs/bin"
+        "@spigell/pulumi-k3os": "^0.0.1"
     }
 }
