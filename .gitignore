@@ -4,6 +4,7 @@ Pulumi.*.yaml
 **/bin/
 **/obj/
 **/node_modules/
+**/.vagrant/
 **/.vs
 **/.idea
 **/.ionide
