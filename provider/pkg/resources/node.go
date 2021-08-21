@@ -47,14 +47,14 @@ type CloudInitFile struct {
 	RawFilePermissions string `json:"permissions" yaml:"permission,omitempty"`
 }
 
-func SetNodeConfig(r resource.PropertyMap) (map[string]interface{}, error) {
+func SetNodeConfig(name string, r resource.PropertyMap) (map[string]interface{}, error) {
 	addr, user, key := parseConnArgs(r["connection"])
 	s, err := transport.SSHInit(addr, user, key)
 	if err != nil {
 		return nil, err
 	}
 
-	path, err := PutNodeConfigToDir("/tmp", r["nodeConfiguration"])
+	path, err := PutNodeConfigToDir("/tmp", name, r["nodeConfiguration"])
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ func parseConnArgs(c resource.PropertyValue) (string, string, string) {
 	return addr, user, key
 }
 
-func PutNodeConfigToDir(dir string, r resource.PropertyValue) (string, error) {
+func PutNodeConfigToDir(dir, prefix string, r resource.PropertyValue) (string, error) {
 	cfg := &NodeConfig{}
 
 	mapstructure.Decode(r.Mappable(), &cfg)
@@ -135,7 +135,7 @@ func PutNodeConfigToDir(dir string, r resource.PropertyValue) (string, error) {
 		return "", err
 	}
 
-	path := filepath.Join(dir, "k3os-config.yaml")
+	path := filepath.Join(dir, fmt.Sprintf("%s_k3os-config.yaml", prefix))
 
 	err = ioutil.WriteFile(path, encoded, 0600)
 	if err != nil {

@@ -14,9 +14,24 @@ func main() {
 				Key: pulumi.String("my-private-key"),
 			},
 			NodeConfiguration: &k3os.NodeConfigurationArgs{
-				Hostname: pulumi.String("node01"),
+				Hostname: pulumi.String("test01"),
+				BootCmd: pulumi.StringArray{
+					pulumi.String("echo This is boot_cmd"),
+				},
 				K3OS: &k3os.K3OSArgs{
 					Password: pulumi.String("password"),
+					ServerUrl: pulumi.String("server2"),
+					Token: pulumi.String("token"),
+					Labels: pulumi.StringMap{
+						"k3os.infraunlimited.tech/local": pulumi.String("true"),
+						"k3os.infraunlimited.tech/kind": pulumi.String("local"),
+					},
+					Environment: pulumi.StringMap{
+						"ENV_1": pulumi.String("true"),
+					},
+					Taints: pulumi.StringArray{
+						pulumi.String("k3os.infraunlimited.tech/unreachable=Deny:NoExecute"),
+					},
 				},
 			},
 		})

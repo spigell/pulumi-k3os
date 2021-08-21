@@ -13,3 +13,5 @@ Pulumi.*.yaml
 yarn.lock
 ci-scripts
 /nuget/
+examples/simple/package-lock.json
+examples/local-go/yaml

@@ -198,7 +198,7 @@ func (k *k3osProvider) Create(ctx context.Context, req *rpc.CreateRequest) (*rpc
 	urn := resource.URN(req.GetUrn())
 
 	if k.yamlRenderMode {
-		err := renderYaml(k.yamlDirectory, inputs["nodeConfiguration"])
+		err := renderYaml(k.yamlDirectory, string(urn.Name()), inputs["nodeConfiguration"])
 		if err != nil {
 			return nil, err
 		}
@@ -212,12 +212,12 @@ func (k *k3osProvider) Create(ctx context.Context, req *rpc.CreateRequest) (*rpc
 		}
 
 		return &rpc.CreateResponse{
-			Id:         string(resource.URN(req.GetUrn())),
+			Id:         string(urn),
 			Properties: outputProperties,
 		}, nil
 	}
 
-	_, err = resources.SetNodeConfig(inputs)
+	_, err = resources.SetNodeConfig(string(urn.Name()), inputs)
 	if err != nil {
 		return nil, err
 	}
@@ -275,7 +275,7 @@ func (k *k3osProvider) Update(ctx context.Context, req *rpc.UpdateRequest) (*rpc
 	}
 
 	if k.yamlRenderMode {
-		err := renderYaml(k.yamlDirectory, news["nodeConfiguration"])
+		err := renderYaml(k.yamlDirectory, string(urn.Name()), news["nodeConfiguration"])
 		if err != nil {
 			return nil, err
 		}
@@ -293,7 +293,7 @@ func (k *k3osProvider) Update(ctx context.Context, req *rpc.UpdateRequest) (*rpc
 		}, nil
 	}
 
-	_, err = resources.SetNodeConfig(news)
+	_, err = resources.SetNodeConfig(string(urn.Name()), news)
 	if err != nil {
 		return nil, err
 	}
@@ -384,17 +384,16 @@ func parseCheckpointObject(obj resource.PropertyMap) resource.PropertyMap {
 	return nil
 }
 
-func renderYaml(dir string, r resource.PropertyValue) error {
+func renderYaml(dir, prefix string, r resource.PropertyValue) error {
 	if _, err := os.Stat(dir); os.IsNotExist(err) {
 		err = os.MkdirAll(dir, 0700)
 		if err != nil {
 			return errors.Wrapf(err, "failed to create directory for rendered YAML: %q", dir)
 		}
-
-		path, err := resources.PutNodeConfigToDir(dir, r)
-		if err != nil {
-			return errors.Wrapf(err, "failed to render YAML to: %q", path)
-		}
+	}
+	path, err := resources.PutNodeConfigToDir(dir, prefix, r)
+	if err != nil {
+		return errors.Wrapf(err, "failed to render YAML to: %q", path)
 	}
 
 	return nil

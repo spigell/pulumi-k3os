@@ -15,9 +15,13 @@ const server = new k3os.Node(serverName, {
         key: `./.vagrant/machines/${serverName}/virtualbox/private_key`
     },
     nodeConfiguration: {
-        hostname: "server01",
+        hostname: serverName,
+        bootCmd: [
+            "echo This is bootCmd"
+        ],
         k3OS: {
-            password: "1234"
+            token: "token",
+            password: "123"
         }
     }
 });
@@ -29,6 +33,13 @@ const agent = new k3os.Node(agentName, {
         key: `./.vagrant/machines/${agentName}/virtualbox/private_key`
     },
     nodeConfiguration: {
-        hostname: "agent01"
+        hostname: agentName,
+        bootCmd: [
+            "echo This is bootCmd!"
+        ],
+        k3OS: {
+            token: "token",
+            serverUrl: `https://${serverIP}:6443`
+        }
     }
 });

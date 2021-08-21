@@ -1,4 +1,0 @@
-hostname: node01
-k3os:
-    password: password
-    k3s_args: []
