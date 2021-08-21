@@ -1,9 +1,9 @@
 # K3OS Pulumi Provider
 
-This is a very simple pulumi native provider for K3OS. 
+This is a very simple pulumi native provider for K3OS.
 
 Resources:
-* Node: It manages file located in `/var/lib/rancher/k3os/config.yaml`, i.e. if the resource craated then config will be created also (and vise-versa). 
+* Node: It manages file located in `/var/lib/rancher/k3os/config.yaml`, i.e. if the resource craated then config will be created also (and vise-versa).
 *note: your server will be rebooted!"* A typescript example of using the single resource defined in `examples/simple`. *note: required Vagrant*
 
 ``Read`` call is not implemented so commands like `pulumi refresh` or `pulumi import` are not working right now.

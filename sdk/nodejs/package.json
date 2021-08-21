@@ -1,6 +1,10 @@
 {
     "name": "@spigell/pulumi-k3os",
     "version": "${VERSION}",
+    "keywords": [
+        "pulumi",
+        "k3os"
+    ],
     "scripts": {
         "build": "tsc"
     },
@@ -11,6 +15,7 @@
         "@pulumi/pulumi": "latest"
     },
     "pulumi": {
-        "resource": true
+        "resource": true,
+        "pluginDownloadURL": "https://github.com/spigell/pulumi-k3os/releases/download/v0.0.1"
     }
 }
