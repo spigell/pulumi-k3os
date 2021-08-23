@@ -124,27 +124,48 @@ class ConnectionArgs:
 @pulumi.input_type
 class K3OSArgs:
     def __init__(__self__, *,
+                 datasources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  environment: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  k3s_args: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  labels: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 modules: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  server_url: Optional[pulumi.Input[str]] = None,
+                 sysctls: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  taints: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  token: Optional[pulumi.Input[str]] = None):
+        if datasources is not None:
+            pulumi.set(__self__, "datasources", datasources)
         if environment is not None:
             pulumi.set(__self__, "environment", environment)
         if k3s_args is not None:
             pulumi.set(__self__, "k3s_args", k3s_args)
         if labels is not None:
             pulumi.set(__self__, "labels", labels)
+        if modules is not None:
+            pulumi.set(__self__, "modules", modules)
+        if ntp_servers is not None:
+            pulumi.set(__self__, "ntp_servers", ntp_servers)
         if password is not None:
             pulumi.set(__self__, "password", password)
         if server_url is not None:
             pulumi.set(__self__, "server_url", server_url)
+        if sysctls is not None:
+            pulumi.set(__self__, "sysctls", sysctls)
         if taints is not None:
             pulumi.set(__self__, "taints", taints)
         if token is not None:
             pulumi.set(__self__, "token", token)
+
+    @property
+    @pulumi.getter
+    def datasources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "datasources")
+
+    @datasources.setter
+    def datasources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "datasources", value)
 
     @property
     @pulumi.getter
@@ -175,6 +196,24 @@ class K3OSArgs:
 
     @property
     @pulumi.getter
+    def modules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "modules")
+
+    @modules.setter
+    def modules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "modules", value)
+
+    @property
+    @pulumi.getter(name="ntpServers")
+    def ntp_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "ntp_servers")
+
+    @ntp_servers.setter
+    def ntp_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "ntp_servers", value)
+
+    @property
+    @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "password")
 
@@ -190,6 +229,15 @@ class K3OSArgs:
     @server_url.setter
     def server_url(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "server_url", value)
+
+    @property
+    @pulumi.getter
+    def sysctls(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        return pulumi.get(self, "sysctls")
+
+    @sysctls.setter
+    def sysctls(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "sysctls", value)
 
     @property
     @pulumi.getter
@@ -214,33 +262,24 @@ class K3OSArgs:
 class NodeConfigurationArgs:
     def __init__(__self__, *,
                  boot_cmd: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 datasources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  init_cmd: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  k3_os: Optional[pulumi.Input['K3OSArgs']] = None,
-                 modules: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  run_cmd: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 ssh_authorizer_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 sysctls: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-                 write_files: Optional[pulumi.Input['CloudInitFilesArgs']] = None):
+                 ssh_authorized_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 write_files: Optional[pulumi.Input[Sequence[pulumi.Input['CloudInitFilesArgs']]]] = None):
         if boot_cmd is not None:
             pulumi.set(__self__, "boot_cmd", boot_cmd)
-        if datasources is not None:
-            pulumi.set(__self__, "datasources", datasources)
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
         if init_cmd is not None:
             pulumi.set(__self__, "init_cmd", init_cmd)
         if k3_os is not None:
             pulumi.set(__self__, "k3_os", k3_os)
-        if modules is not None:
-            pulumi.set(__self__, "modules", modules)
         if run_cmd is not None:
             pulumi.set(__self__, "run_cmd", run_cmd)
-        if ssh_authorizer_keys is not None:
-            pulumi.set(__self__, "ssh_authorizer_keys", ssh_authorizer_keys)
-        if sysctls is not None:
-            pulumi.set(__self__, "sysctls", sysctls)
+        if ssh_authorized_keys is not None:
+            pulumi.set(__self__, "ssh_authorized_keys", ssh_authorized_keys)
         if write_files is not None:
             pulumi.set(__self__, "write_files", write_files)
 
@@ -252,15 +291,6 @@ class NodeConfigurationArgs:
     @boot_cmd.setter
     def boot_cmd(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "boot_cmd", value)
-
-    @property
-    @pulumi.getter
-    def datasources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        return pulumi.get(self, "datasources")
-
-    @datasources.setter
-    def datasources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
-        pulumi.set(self, "datasources", value)
 
     @property
     @pulumi.getter
@@ -290,15 +320,6 @@ class NodeConfigurationArgs:
         pulumi.set(self, "k3_os", value)
 
     @property
-    @pulumi.getter
-    def modules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        return pulumi.get(self, "modules")
-
-    @modules.setter
-    def modules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
-        pulumi.set(self, "modules", value)
-
-    @property
     @pulumi.getter(name="runCmd")
     def run_cmd(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         return pulumi.get(self, "run_cmd")
@@ -308,30 +329,21 @@ class NodeConfigurationArgs:
         pulumi.set(self, "run_cmd", value)
 
     @property
-    @pulumi.getter(name="sshAuthorizerKeys")
-    def ssh_authorizer_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        return pulumi.get(self, "ssh_authorizer_keys")
+    @pulumi.getter(name="sshAuthorizedKeys")
+    def ssh_authorized_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "ssh_authorized_keys")
 
-    @ssh_authorizer_keys.setter
-    def ssh_authorizer_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
-        pulumi.set(self, "ssh_authorizer_keys", value)
-
-    @property
-    @pulumi.getter
-    def sysctls(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
-        return pulumi.get(self, "sysctls")
-
-    @sysctls.setter
-    def sysctls(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
-        pulumi.set(self, "sysctls", value)
+    @ssh_authorized_keys.setter
+    def ssh_authorized_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "ssh_authorized_keys", value)
 
     @property
     @pulumi.getter(name="writeFiles")
-    def write_files(self) -> Optional[pulumi.Input['CloudInitFilesArgs']]:
+    def write_files(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudInitFilesArgs']]]]:
         return pulumi.get(self, "write_files")
 
     @write_files.setter
-    def write_files(self, value: Optional[pulumi.Input['CloudInitFilesArgs']]):
+    def write_files(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudInitFilesArgs']]]]):
         pulumi.set(self, "write_files", value)
 
 

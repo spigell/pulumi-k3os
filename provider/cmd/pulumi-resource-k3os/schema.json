@@ -64,6 +64,30 @@
                     "items": {
                         "type": "string"
                     }
+                },
+                "datasources": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "modules": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "sysctls": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "ntpServers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             }
         },
@@ -93,7 +117,7 @@
                 "hostname": {
                     "type": "string"
                 },
-                "sshAuthorizerKeys": {
+                "sshAuthorizedKeys": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -117,29 +141,14 @@
                         "type": "string"
                     }
                 },
-                "datasources": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "modules": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "sysctls": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "type": "string"
-                    }
-                },
                 "k3OS": {
                     "$ref": "#/types/k3os:index:k3OS"
                 },
                 "writeFiles": {
-                    "$ref": "#/types/k3os:index:CloudInitFiles"
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/k3os:index:CloudInitFiles"
+                    }
                 }
             }
         }

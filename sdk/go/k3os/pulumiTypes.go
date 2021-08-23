@@ -49,45 +49,29 @@ func (i CloudInitFilesArgs) ToCloudInitFilesOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(CloudInitFilesOutput)
 }
 
-func (i CloudInitFilesArgs) ToCloudInitFilesPtrOutput() CloudInitFilesPtrOutput {
-	return i.ToCloudInitFilesPtrOutputWithContext(context.Background())
-}
-
-func (i CloudInitFilesArgs) ToCloudInitFilesPtrOutputWithContext(ctx context.Context) CloudInitFilesPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CloudInitFilesOutput).ToCloudInitFilesPtrOutputWithContext(ctx)
-}
-
-// CloudInitFilesPtrInput is an input type that accepts CloudInitFilesArgs, CloudInitFilesPtr and CloudInitFilesPtrOutput values.
-// You can construct a concrete instance of `CloudInitFilesPtrInput` via:
+// CloudInitFilesArrayInput is an input type that accepts CloudInitFilesArray and CloudInitFilesArrayOutput values.
+// You can construct a concrete instance of `CloudInitFilesArrayInput` via:
 //
-//          CloudInitFilesArgs{...}
-//
-//  or:
-//
-//          nil
-type CloudInitFilesPtrInput interface {
+//          CloudInitFilesArray{ CloudInitFilesArgs{...} }
+type CloudInitFilesArrayInput interface {
 	pulumi.Input
 
-	ToCloudInitFilesPtrOutput() CloudInitFilesPtrOutput
-	ToCloudInitFilesPtrOutputWithContext(context.Context) CloudInitFilesPtrOutput
+	ToCloudInitFilesArrayOutput() CloudInitFilesArrayOutput
+	ToCloudInitFilesArrayOutputWithContext(context.Context) CloudInitFilesArrayOutput
 }
 
-type cloudInitFilesPtrType CloudInitFilesArgs
+type CloudInitFilesArray []CloudInitFilesInput
 
-func CloudInitFilesPtr(v *CloudInitFilesArgs) CloudInitFilesPtrInput {
-	return (*cloudInitFilesPtrType)(v)
+func (CloudInitFilesArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CloudInitFiles)(nil)).Elem()
 }
 
-func (*cloudInitFilesPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**CloudInitFiles)(nil)).Elem()
+func (i CloudInitFilesArray) ToCloudInitFilesArrayOutput() CloudInitFilesArrayOutput {
+	return i.ToCloudInitFilesArrayOutputWithContext(context.Background())
 }
 
-func (i *cloudInitFilesPtrType) ToCloudInitFilesPtrOutput() CloudInitFilesPtrOutput {
-	return i.ToCloudInitFilesPtrOutputWithContext(context.Background())
-}
-
-func (i *cloudInitFilesPtrType) ToCloudInitFilesPtrOutputWithContext(ctx context.Context) CloudInitFilesPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CloudInitFilesPtrOutput)
+func (i CloudInitFilesArray) ToCloudInitFilesArrayOutputWithContext(ctx context.Context) CloudInitFilesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudInitFilesArrayOutput)
 }
 
 type CloudInitFilesOutput struct{ *pulumi.OutputState }
@@ -104,15 +88,6 @@ func (o CloudInitFilesOutput) ToCloudInitFilesOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o CloudInitFilesOutput) ToCloudInitFilesPtrOutput() CloudInitFilesPtrOutput {
-	return o.ToCloudInitFilesPtrOutputWithContext(context.Background())
-}
-
-func (o CloudInitFilesOutput) ToCloudInitFilesPtrOutputWithContext(ctx context.Context) CloudInitFilesPtrOutput {
-	return o.ApplyT(func(v CloudInitFiles) *CloudInitFiles {
-		return &v
-	}).(CloudInitFilesPtrOutput)
-}
 func (o CloudInitFilesOutput) Content() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CloudInitFiles) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
@@ -133,67 +108,24 @@ func (o CloudInitFilesOutput) RawFilePermissions() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CloudInitFiles) *string { return v.RawFilePermissions }).(pulumi.StringPtrOutput)
 }
 
-type CloudInitFilesPtrOutput struct{ *pulumi.OutputState }
+type CloudInitFilesArrayOutput struct{ *pulumi.OutputState }
 
-func (CloudInitFilesPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**CloudInitFiles)(nil)).Elem()
+func (CloudInitFilesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CloudInitFiles)(nil)).Elem()
 }
 
-func (o CloudInitFilesPtrOutput) ToCloudInitFilesPtrOutput() CloudInitFilesPtrOutput {
+func (o CloudInitFilesArrayOutput) ToCloudInitFilesArrayOutput() CloudInitFilesArrayOutput {
 	return o
 }
 
-func (o CloudInitFilesPtrOutput) ToCloudInitFilesPtrOutputWithContext(ctx context.Context) CloudInitFilesPtrOutput {
+func (o CloudInitFilesArrayOutput) ToCloudInitFilesArrayOutputWithContext(ctx context.Context) CloudInitFilesArrayOutput {
 	return o
 }
 
-func (o CloudInitFilesPtrOutput) Elem() CloudInitFilesOutput {
-	return o.ApplyT(func(v *CloudInitFiles) CloudInitFiles { return *v }).(CloudInitFilesOutput)
-}
-
-func (o CloudInitFilesPtrOutput) Content() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *CloudInitFiles) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Content
-	}).(pulumi.StringPtrOutput)
-}
-
-func (o CloudInitFilesPtrOutput) Encoding() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *CloudInitFiles) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Encoding
-	}).(pulumi.StringPtrOutput)
-}
-
-func (o CloudInitFilesPtrOutput) Owner() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *CloudInitFiles) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Owner
-	}).(pulumi.StringPtrOutput)
-}
-
-func (o CloudInitFilesPtrOutput) Path() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *CloudInitFiles) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Path
-	}).(pulumi.StringPtrOutput)
-}
-
-func (o CloudInitFilesPtrOutput) RawFilePermissions() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *CloudInitFiles) *string {
-		if v == nil {
-			return nil
-		}
-		return v.RawFilePermissions
-	}).(pulumi.StringPtrOutput)
+func (o CloudInitFilesArrayOutput) Index(i pulumi.IntInput) CloudInitFilesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudInitFiles {
+		return vs[0].([]CloudInitFiles)[vs[1].(int)]
+	}).(CloudInitFilesOutput)
 }
 
 type Connection struct {
@@ -353,11 +285,15 @@ func (o ConnectionPtrOutput) User() pulumi.StringPtrOutput {
 }
 
 type K3OS struct {
+	Datasources []string          `pulumi:"datasources"`
 	Environment map[string]string `pulumi:"environment"`
 	K3sArgs     []string          `pulumi:"k3sArgs"`
 	Labels      map[string]string `pulumi:"labels"`
+	Modules     []string          `pulumi:"modules"`
+	NtpServers  []string          `pulumi:"ntpServers"`
 	Password    *string           `pulumi:"password"`
 	ServerUrl   *string           `pulumi:"serverUrl"`
+	Sysctls     map[string]string `pulumi:"sysctls"`
 	Taints      []string          `pulumi:"taints"`
 	Token       *string           `pulumi:"token"`
 }
@@ -374,11 +310,15 @@ type K3OSInput interface {
 }
 
 type K3OSArgs struct {
+	Datasources pulumi.StringArrayInput `pulumi:"datasources"`
 	Environment pulumi.StringMapInput   `pulumi:"environment"`
 	K3sArgs     pulumi.StringArrayInput `pulumi:"k3sArgs"`
 	Labels      pulumi.StringMapInput   `pulumi:"labels"`
+	Modules     pulumi.StringArrayInput `pulumi:"modules"`
+	NtpServers  pulumi.StringArrayInput `pulumi:"ntpServers"`
 	Password    pulumi.StringPtrInput   `pulumi:"password"`
 	ServerUrl   pulumi.StringPtrInput   `pulumi:"serverUrl"`
+	Sysctls     pulumi.StringMapInput   `pulumi:"sysctls"`
 	Taints      pulumi.StringArrayInput `pulumi:"taints"`
 	Token       pulumi.StringPtrInput   `pulumi:"token"`
 }
@@ -459,6 +399,10 @@ func (o K3OSOutput) ToK3OSPtrOutputWithContext(ctx context.Context) K3OSPtrOutpu
 		return &v
 	}).(K3OSPtrOutput)
 }
+func (o K3OSOutput) Datasources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v K3OS) []string { return v.Datasources }).(pulumi.StringArrayOutput)
+}
+
 func (o K3OSOutput) Environment() pulumi.StringMapOutput {
 	return o.ApplyT(func(v K3OS) map[string]string { return v.Environment }).(pulumi.StringMapOutput)
 }
@@ -471,12 +415,24 @@ func (o K3OSOutput) Labels() pulumi.StringMapOutput {
 	return o.ApplyT(func(v K3OS) map[string]string { return v.Labels }).(pulumi.StringMapOutput)
 }
 
+func (o K3OSOutput) Modules() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v K3OS) []string { return v.Modules }).(pulumi.StringArrayOutput)
+}
+
+func (o K3OSOutput) NtpServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v K3OS) []string { return v.NtpServers }).(pulumi.StringArrayOutput)
+}
+
 func (o K3OSOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v K3OS) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 func (o K3OSOutput) ServerUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v K3OS) *string { return v.ServerUrl }).(pulumi.StringPtrOutput)
+}
+
+func (o K3OSOutput) Sysctls() pulumi.StringMapOutput {
+	return o.ApplyT(func(v K3OS) map[string]string { return v.Sysctls }).(pulumi.StringMapOutput)
 }
 
 func (o K3OSOutput) Taints() pulumi.StringArrayOutput {
@@ -503,6 +459,15 @@ func (o K3OSPtrOutput) ToK3OSPtrOutputWithContext(ctx context.Context) K3OSPtrOu
 
 func (o K3OSPtrOutput) Elem() K3OSOutput {
 	return o.ApplyT(func(v *K3OS) K3OS { return *v }).(K3OSOutput)
+}
+
+func (o K3OSPtrOutput) Datasources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *K3OS) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Datasources
+	}).(pulumi.StringArrayOutput)
 }
 
 func (o K3OSPtrOutput) Environment() pulumi.StringMapOutput {
@@ -532,6 +497,24 @@ func (o K3OSPtrOutput) Labels() pulumi.StringMapOutput {
 	}).(pulumi.StringMapOutput)
 }
 
+func (o K3OSPtrOutput) Modules() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *K3OS) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Modules
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o K3OSPtrOutput) NtpServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *K3OS) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NtpServers
+	}).(pulumi.StringArrayOutput)
+}
+
 func (o K3OSPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *K3OS) *string {
 		if v == nil {
@@ -548,6 +531,15 @@ func (o K3OSPtrOutput) ServerUrl() pulumi.StringPtrOutput {
 		}
 		return v.ServerUrl
 	}).(pulumi.StringPtrOutput)
+}
+
+func (o K3OSPtrOutput) Sysctls() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *K3OS) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.Sysctls
+	}).(pulumi.StringMapOutput)
 }
 
 func (o K3OSPtrOutput) Taints() pulumi.StringArrayOutput {
@@ -569,16 +561,13 @@ func (o K3OSPtrOutput) Token() pulumi.StringPtrOutput {
 }
 
 type NodeConfiguration struct {
-	BootCmd           []string          `pulumi:"bootCmd"`
-	Datasources       []string          `pulumi:"datasources"`
-	Hostname          *string           `pulumi:"hostname"`
-	InitCmd           []string          `pulumi:"initCmd"`
-	K3OS              *K3OS             `pulumi:"k3OS"`
-	Modules           []string          `pulumi:"modules"`
-	RunCmd            []string          `pulumi:"runCmd"`
-	SshAuthorizerKeys []string          `pulumi:"sshAuthorizerKeys"`
-	Sysctls           map[string]string `pulumi:"sysctls"`
-	WriteFiles        *CloudInitFiles   `pulumi:"writeFiles"`
+	BootCmd           []string         `pulumi:"bootCmd"`
+	Hostname          *string          `pulumi:"hostname"`
+	InitCmd           []string         `pulumi:"initCmd"`
+	K3OS              *K3OS            `pulumi:"k3OS"`
+	RunCmd            []string         `pulumi:"runCmd"`
+	SshAuthorizedKeys []string         `pulumi:"sshAuthorizedKeys"`
+	WriteFiles        []CloudInitFiles `pulumi:"writeFiles"`
 }
 
 // NodeConfigurationInput is an input type that accepts NodeConfigurationArgs and NodeConfigurationOutput values.
@@ -593,16 +582,13 @@ type NodeConfigurationInput interface {
 }
 
 type NodeConfigurationArgs struct {
-	BootCmd           pulumi.StringArrayInput `pulumi:"bootCmd"`
-	Datasources       pulumi.StringArrayInput `pulumi:"datasources"`
-	Hostname          pulumi.StringPtrInput   `pulumi:"hostname"`
-	InitCmd           pulumi.StringArrayInput `pulumi:"initCmd"`
-	K3OS              K3OSPtrInput            `pulumi:"k3OS"`
-	Modules           pulumi.StringArrayInput `pulumi:"modules"`
-	RunCmd            pulumi.StringArrayInput `pulumi:"runCmd"`
-	SshAuthorizerKeys pulumi.StringArrayInput `pulumi:"sshAuthorizerKeys"`
-	Sysctls           pulumi.StringMapInput   `pulumi:"sysctls"`
-	WriteFiles        CloudInitFilesPtrInput  `pulumi:"writeFiles"`
+	BootCmd           pulumi.StringArrayInput  `pulumi:"bootCmd"`
+	Hostname          pulumi.StringPtrInput    `pulumi:"hostname"`
+	InitCmd           pulumi.StringArrayInput  `pulumi:"initCmd"`
+	K3OS              K3OSPtrInput             `pulumi:"k3OS"`
+	RunCmd            pulumi.StringArrayInput  `pulumi:"runCmd"`
+	SshAuthorizedKeys pulumi.StringArrayInput  `pulumi:"sshAuthorizedKeys"`
+	WriteFiles        CloudInitFilesArrayInput `pulumi:"writeFiles"`
 }
 
 func (NodeConfigurationArgs) ElementType() reflect.Type {
@@ -685,10 +671,6 @@ func (o NodeConfigurationOutput) BootCmd() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodeConfiguration) []string { return v.BootCmd }).(pulumi.StringArrayOutput)
 }
 
-func (o NodeConfigurationOutput) Datasources() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v NodeConfiguration) []string { return v.Datasources }).(pulumi.StringArrayOutput)
-}
-
 func (o NodeConfigurationOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeConfiguration) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
@@ -701,24 +683,16 @@ func (o NodeConfigurationOutput) K3OS() K3OSPtrOutput {
 	return o.ApplyT(func(v NodeConfiguration) *K3OS { return v.K3OS }).(K3OSPtrOutput)
 }
 
-func (o NodeConfigurationOutput) Modules() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v NodeConfiguration) []string { return v.Modules }).(pulumi.StringArrayOutput)
-}
-
 func (o NodeConfigurationOutput) RunCmd() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodeConfiguration) []string { return v.RunCmd }).(pulumi.StringArrayOutput)
 }
 
-func (o NodeConfigurationOutput) SshAuthorizerKeys() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v NodeConfiguration) []string { return v.SshAuthorizerKeys }).(pulumi.StringArrayOutput)
+func (o NodeConfigurationOutput) SshAuthorizedKeys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NodeConfiguration) []string { return v.SshAuthorizedKeys }).(pulumi.StringArrayOutput)
 }
 
-func (o NodeConfigurationOutput) Sysctls() pulumi.StringMapOutput {
-	return o.ApplyT(func(v NodeConfiguration) map[string]string { return v.Sysctls }).(pulumi.StringMapOutput)
-}
-
-func (o NodeConfigurationOutput) WriteFiles() CloudInitFilesPtrOutput {
-	return o.ApplyT(func(v NodeConfiguration) *CloudInitFiles { return v.WriteFiles }).(CloudInitFilesPtrOutput)
+func (o NodeConfigurationOutput) WriteFiles() CloudInitFilesArrayOutput {
+	return o.ApplyT(func(v NodeConfiguration) []CloudInitFiles { return v.WriteFiles }).(CloudInitFilesArrayOutput)
 }
 
 type NodeConfigurationPtrOutput struct{ *pulumi.OutputState }
@@ -745,15 +719,6 @@ func (o NodeConfigurationPtrOutput) BootCmd() pulumi.StringArrayOutput {
 			return nil
 		}
 		return v.BootCmd
-	}).(pulumi.StringArrayOutput)
-}
-
-func (o NodeConfigurationPtrOutput) Datasources() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *NodeConfiguration) []string {
-		if v == nil {
-			return nil
-		}
-		return v.Datasources
 	}).(pulumi.StringArrayOutput)
 }
 
@@ -784,15 +749,6 @@ func (o NodeConfigurationPtrOutput) K3OS() K3OSPtrOutput {
 	}).(K3OSPtrOutput)
 }
 
-func (o NodeConfigurationPtrOutput) Modules() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *NodeConfiguration) []string {
-		if v == nil {
-			return nil
-		}
-		return v.Modules
-	}).(pulumi.StringArrayOutput)
-}
-
 func (o NodeConfigurationPtrOutput) RunCmd() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodeConfiguration) []string {
 		if v == nil {
@@ -802,36 +758,27 @@ func (o NodeConfigurationPtrOutput) RunCmd() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
-func (o NodeConfigurationPtrOutput) SshAuthorizerKeys() pulumi.StringArrayOutput {
+func (o NodeConfigurationPtrOutput) SshAuthorizedKeys() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodeConfiguration) []string {
 		if v == nil {
 			return nil
 		}
-		return v.SshAuthorizerKeys
+		return v.SshAuthorizedKeys
 	}).(pulumi.StringArrayOutput)
 }
 
-func (o NodeConfigurationPtrOutput) Sysctls() pulumi.StringMapOutput {
-	return o.ApplyT(func(v *NodeConfiguration) map[string]string {
-		if v == nil {
-			return nil
-		}
-		return v.Sysctls
-	}).(pulumi.StringMapOutput)
-}
-
-func (o NodeConfigurationPtrOutput) WriteFiles() CloudInitFilesPtrOutput {
-	return o.ApplyT(func(v *NodeConfiguration) *CloudInitFiles {
+func (o NodeConfigurationPtrOutput) WriteFiles() CloudInitFilesArrayOutput {
+	return o.ApplyT(func(v *NodeConfiguration) []CloudInitFiles {
 		if v == nil {
 			return nil
 		}
 		return v.WriteFiles
-	}).(CloudInitFilesPtrOutput)
+	}).(CloudInitFilesArrayOutput)
 }
 
 func init() {
 	pulumi.RegisterOutputType(CloudInitFilesOutput{})
-	pulumi.RegisterOutputType(CloudInitFilesPtrOutput{})
+	pulumi.RegisterOutputType(CloudInitFilesArrayOutput{})
 	pulumi.RegisterOutputType(ConnectionOutput{})
 	pulumi.RegisterOutputType(ConnectionPtrOutput{})
 	pulumi.RegisterOutputType(K3OSOutput{})

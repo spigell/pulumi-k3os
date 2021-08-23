@@ -19,24 +19,25 @@ export interface ConnectionArgs {
 }
 
 export interface K3OSArgs {
+    datasources?: pulumi.Input<pulumi.Input<string>[]>;
     environment?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     k3sArgs?: pulumi.Input<pulumi.Input<string>[]>;
     labels?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    modules?: pulumi.Input<pulumi.Input<string>[]>;
+    ntpServers?: pulumi.Input<pulumi.Input<string>[]>;
     password?: pulumi.Input<string>;
     serverUrl?: pulumi.Input<string>;
+    sysctls?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     taints?: pulumi.Input<pulumi.Input<string>[]>;
     token?: pulumi.Input<string>;
 }
 
 export interface NodeConfigurationArgs {
     bootCmd?: pulumi.Input<pulumi.Input<string>[]>;
-    datasources?: pulumi.Input<pulumi.Input<string>[]>;
     hostname?: pulumi.Input<string>;
     initCmd?: pulumi.Input<pulumi.Input<string>[]>;
     k3OS?: pulumi.Input<inputs.K3OSArgs>;
-    modules?: pulumi.Input<pulumi.Input<string>[]>;
     runCmd?: pulumi.Input<pulumi.Input<string>[]>;
-    sshAuthorizerKeys?: pulumi.Input<pulumi.Input<string>[]>;
-    sysctls?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    writeFiles?: pulumi.Input<inputs.CloudInitFilesArgs>;
+    sshAuthorizedKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    writeFiles?: pulumi.Input<pulumi.Input<inputs.CloudInitFilesArgs>[]>;
 }
