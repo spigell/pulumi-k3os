@@ -12,7 +12,7 @@ class InstallPluginCommand(install):
     def run(self):
         install.run(self)
         try:
-            check_call(['pulumi', 'plugin', 'install', 'resource', 'k3os', '${PLUGIN_VERSION}', '--server', 'https://github.com/spigell/pulumi-k3os/releases/download/v0.0.1'])
+            check_call(['pulumi', 'plugin', 'install', 'resource', 'k3os', '${PLUGIN_VERSION}', '--server', 'https://github.com/spigell/pulumi-k3os/releases/download/v0.0.2'])
         except OSError as error:
             if error.errno == errno.ENOENT:
                 print("""
