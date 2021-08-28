@@ -17,7 +17,7 @@ This package is available only for JS/TS or Golang.
 Grab plugin if pulumi doesn't make it automaticaly
 
 ```
-pulumi plugin install resource k3os v0.0.2 --server https://github.com/spigell/pulumi-k3os/releases/download/v0.0.2
+pulumi plugin install resource k3os v0.0.3 --server https://github.com/spigell/pulumi-k3os/releases/download/v0.0.3
 ```
 
 ### Node.js (JavaScript/TypeScript)
@@ -53,7 +53,7 @@ Note that the generated provider plugin (`pulumi-resource-k3os`) must be on your
 
 ```bash
 # build the plugin and provider
-$ VERSION=0.0.1 make build
+$ VERSION=0.0.3 make build
 
 # test
 $ cd examples/local-go

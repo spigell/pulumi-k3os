@@ -29,8 +29,8 @@ func main() {
 				},
 				WriteFiles: &k3os.CloudInitFilesArray{
 					&k3os.CloudInitFilesArgs{
-						Path:    pulumi.String("/home/rancher/greetings!"),
-						Content: pulumi.String("Hello!"),
+						Path:    pulumi.String("/home/rancher/greetings"),
+						Content: pulumi.String("Hello World!"),
 					},
 				},
 				K3OS: &k3os.K3OSArgs{

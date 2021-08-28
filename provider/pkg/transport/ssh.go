@@ -2,7 +2,6 @@ package transport
 
 import (
 	"bytes"
-	"io/ioutil"
 
 	"github.com/tmc/scp"
 	"golang.org/x/crypto/ssh"
@@ -13,13 +12,8 @@ type SSHTransport struct {
 	clientConfig *ssh.ClientConfig
 }
 
-func SSHInit(addr, user, keyPath string) (*SSHTransport, error) {
-	key, err := ioutil.ReadFile(keyPath)
-	if err != nil {
-		return nil, err
-	}
-
-	signer, err := ssh.ParsePrivateKey(key)
+func SSHInit(addr, user, key string) (*SSHTransport, error) {
+	signer, err := ssh.ParsePrivateKey([]byte(key))
 	if err != nil {
 		return nil, err
 	}

@@ -190,7 +190,11 @@ func (k *k3osProvider) Diff(ctx context.Context, req *rpc.DiffRequest) (*rpc.Dif
 
 // Create allocates a new instance of the provided resource and returns its unique ID afterwards.
 func (k *k3osProvider) Create(ctx context.Context, req *rpc.CreateRequest) (*rpc.CreateResponse, error) {
-	inputs, err := plugin.UnmarshalProperties(req.GetProperties(), plugin.MarshalOptions{KeepUnknowns: true, SkipNulls: true})
+	inputs, err := plugin.UnmarshalProperties(req.GetProperties(), plugin.MarshalOptions{
+		KeepUnknowns: true,
+		SkipNulls:    true,
+		KeepSecrets:  true,
+	})
 	if err != nil {
 		return nil, err
 	}
@@ -205,7 +209,7 @@ func (k *k3osProvider) Create(ctx context.Context, req *rpc.CreateRequest) (*rpc
 
 		outputProperties, err := plugin.MarshalProperties(
 			checkpointObject(inputs, make(map[string]interface{})),
-			plugin.MarshalOptions{KeepUnknowns: true, SkipNulls: true},
+			plugin.MarshalOptions{KeepUnknowns: true, SkipNulls: true, KeepSecrets: true},
 		)
 		if err != nil {
 			return nil, err
@@ -228,7 +232,7 @@ func (k *k3osProvider) Create(ctx context.Context, req *rpc.CreateRequest) (*rpc
 
 	outputProperties, err := plugin.MarshalProperties(
 		checkpointObject(inputs, resp),
-		plugin.MarshalOptions{KeepUnknowns: true, SkipNulls: true},
+		plugin.MarshalOptions{KeepUnknowns: true, SkipNulls: true, KeepSecrets: true},
 	)
 	if err != nil {
 		return nil, err
@@ -269,7 +273,11 @@ func (k *k3osProvider) Read(ctx context.Context, req *rpc.ReadRequest) (*rpc.Rea
 // Update updates an existing resource with new values.
 func (k *k3osProvider) Update(ctx context.Context, req *rpc.UpdateRequest) (*rpc.UpdateResponse, error) {
 	urn := resource.URN(req.GetUrn())
-	news, err := plugin.UnmarshalProperties(req.GetNews(), plugin.MarshalOptions{KeepUnknowns: true, SkipNulls: true})
+	news, err := plugin.UnmarshalProperties(req.GetNews(), plugin.MarshalOptions{
+		KeepUnknowns: true,
+		SkipNulls:    true,
+		KeepSecrets:  true,
+	})
 	if err != nil {
 		return nil, err
 	}
@@ -282,7 +290,7 @@ func (k *k3osProvider) Update(ctx context.Context, req *rpc.UpdateRequest) (*rpc
 
 		outputProperties, err := plugin.MarshalProperties(
 			checkpointObject(news, make(map[string]interface{})),
-			plugin.MarshalOptions{KeepUnknowns: true, SkipNulls: true},
+			plugin.MarshalOptions{KeepUnknowns: true, SkipNulls: true, KeepSecrets: true},
 		)
 		if err != nil {
 			return nil, err
@@ -304,7 +312,7 @@ func (k *k3osProvider) Update(ctx context.Context, req *rpc.UpdateRequest) (*rpc
 
 	outputProperties, err := plugin.MarshalProperties(
 		checkpointObject(news, resp),
-		plugin.MarshalOptions{KeepUnknowns: true, SkipNulls: true},
+		plugin.MarshalOptions{KeepUnknowns: true, SkipNulls: true, KeepSecrets: true},
 	)
 	if err != nil {
 		return nil, err
@@ -319,7 +327,11 @@ func (k *k3osProvider) Update(ctx context.Context, req *rpc.UpdateRequest) (*rpc
 // to still exist.
 func (k *k3osProvider) Delete(ctx context.Context, req *rpc.DeleteRequest) (*pbempty.Empty, error) {
 	urn := resource.URN(req.GetUrn())
-	props, err := plugin.UnmarshalProperties(req.GetProperties(), plugin.MarshalOptions{KeepUnknowns: true, SkipNulls: true})
+	props, err := plugin.UnmarshalProperties(req.GetProperties(), plugin.MarshalOptions{
+		KeepUnknowns: true,
+		SkipNulls:    true,
+		KeepSecrets:  true,
+	})
 	if err != nil {
 		return nil, err
 	}
@@ -339,6 +351,7 @@ func (k *k3osProvider) Delete(ctx context.Context, req *rpc.DeleteRequest) (*pbe
 
 		_ = k.host.LogStatus(ctx, diag.Info, urn, fmt.Sprintf("Delete: %s", waitForCompletionMsg))
 		_ = k.waitForResourceOpCompletion(inputs["connection"])
+		_ = k.host.LogStatus(ctx, diag.Info, urn, "Delete: successful")
 	}
 
 	return &pbempty.Empty{}, nil
@@ -378,7 +391,7 @@ func checkpointObject(inputs resource.PropertyMap, outputs map[string]interface{
 
 func parseCheckpointObject(obj resource.PropertyMap) resource.PropertyMap {
 	if inputs, ok := obj["__inputs"]; ok {
-		return inputs.ObjectValue()
+		return inputs.SecretValue().Element.ObjectValue()
 	}
 
 	return nil
@@ -386,7 +399,7 @@ func parseCheckpointObject(obj resource.PropertyMap) resource.PropertyMap {
 
 func renderYaml(dir, prefix string, r resource.PropertyValue) error {
 	if _, err := os.Stat(dir); os.IsNotExist(err) {
-		err = os.MkdirAll(dir, 0700)
+		err = os.MkdirAll(dir, 0o700)
 		if err != nil {
 			return errors.Wrapf(err, "failed to create directory for rendered YAML: %q", dir)
 		}

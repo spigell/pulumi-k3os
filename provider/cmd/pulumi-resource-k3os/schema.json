@@ -1,11 +1,11 @@
 {
     "name": "k3os",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "keywords": [
         "pulumi",
         "k3os"
     ],
-    "pluginDownloadURL": "https://github.com/spigell/pulumi-k3os/releases/download/v0.0.2",
+    "pluginDownloadURL": "https://github.com/spigell/pulumi-k3os/releases/download/v0.0.3",
     "config": {
         "variables": {
             "renderYamlToDirectory": {

@@ -17,25 +17,25 @@ const (
 )
 
 type NodeConfig struct {
-	SSHAuthorizedKeys []string          `json:"ssh_authorized_keys" yaml:"ssh_authorized_keys,omitempty"`
-	WriteFiles        []CloudInitFile   `json:"write_files,omitempty" yaml:"write_files,omitempty"`
-	Hostname          string            `json:"hostname,omitempty" yaml:"hostname,omitempty"`
-	Bootcmd           []string          `json:"boot_cmd" yaml:"boot_cmd,omitempty"`
-	Initcmd           []string          `json:"init_cmd" yaml:"init_cmd,omitempty"`
-	Runcmd            []string          `json:"run_cmd" yaml:"run_cmd,omitempty"`
-	K3os              K3OSConfig        `json:"k3os" yaml:"k3os"`
+	SSHAuthorizedKeys []string        `json:"ssh_authorized_keys" yaml:"ssh_authorized_keys,omitempty"`
+	WriteFiles        []CloudInitFile `json:"write_files,omitempty" yaml:"write_files,omitempty"`
+	Hostname          string          `json:"hostname,omitempty" yaml:"hostname,omitempty"`
+	Bootcmd           []string        `json:"boot_cmd" yaml:"boot_cmd,omitempty"`
+	Initcmd           []string        `json:"init_cmd" yaml:"init_cmd,omitempty"`
+	Runcmd            []string        `json:"run_cmd" yaml:"run_cmd,omitempty"`
+	K3os              K3OSConfig      `json:"k3os" yaml:"k3os"`
 }
 
 type K3OSConfig struct {
-	DataSources       []string          `json:"data_sources,omitempty" yaml:"data_sources,omitempty"`
-	Modules           []string          `json:"modules,omitempty" yaml:"modules,omitempty"`
-	Sysctls           map[string]string `json:"sysctls,omitempty" yaml:"sysctls,omitempty"`
+	DataSources []string          `json:"data_sources,omitempty" yaml:"data_sources,omitempty"`
+	Modules     []string          `json:"modules,omitempty" yaml:"modules,omitempty"`
+	Sysctls     map[string]string `json:"sysctls,omitempty" yaml:"sysctls,omitempty"`
 	ServerURL   string            `json:"server_url" yaml:"server_url,omitempty"`
 	Password    string            `json:"password,omitempty" yaml:"password,omitempty"`
 	Token       string            `json:"token,omitempty" yaml:"token,omitempty"`
 	Labels      map[string]string `json:"labels,omitempty" yaml:"labels,omitempty"`
 	K3sArgs     []string          `json:"k3s_args" yaml:"k3s_args"`
-	NtpServers  []string 		`json:"ntp_servers" yaml:"ntp_servers"`
+	NtpServers  []string          `json:"ntp_servers" yaml:"ntp_servers"`
 	Environment map[string]string `json:"environment,omitempty" yaml:"environment,omitempty"`
 	Taints      []string          `json:"taints,omitempty" yaml:"taints,omitempty"`
 }
@@ -119,9 +119,22 @@ func CheckNodeConnection(c resource.PropertyValue) (map[string]interface{}, erro
 }
 
 func parseConnArgs(c resource.PropertyValue) (string, string, string) {
-	addr := c.ObjectValue()["addr"].StringValue()
-	user := c.ObjectValue()["user"].StringValue()
-	key := c.ObjectValue()["key"].StringValue()
+	var addr, user, key string
+	if c.ObjectValue()["addr"].IsSecret() {
+		addr = c.ObjectValue()["addr"].SecretValue().Element.StringValue()
+	} else {
+		addr = c.ObjectValue()["addr"].StringValue()
+	}
+	if c.ObjectValue()["user"].IsSecret() {
+		user = c.ObjectValue()["user"].SecretValue().Element.StringValue()
+	} else {
+		user = c.ObjectValue()["user"].StringValue()
+	}
+	if c.ObjectValue()["key"].IsSecret() {
+		key = c.ObjectValue()["key"].SecretValue().Element.StringValue()
+	} else {
+		key = c.ObjectValue()["key"].StringValue()
+	}
 
 	return addr, user, key
 }
